@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sherlock Secrets — US Label Response</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 15mm; }
+
+  :root{
+    --ink:#14161c; --ink-2:#3b414e; --ink-3:#6b7385;
+    --rule:#c9cdd8; --rule-soft:#e2e5eb;
+    --paper:#ffffff; --panel-2:#eef0f4;
+    --pms533:#33465e; --pms7621:#9c2b26; --pms7475:#256b6a; --amber:#8a5a10;
+    --tint-red:#f6e7e5; --tint-teal:#e2eeed; --tint-amber:#f6ecdb; --tint-slate:#e5e9f0;
+    --measure:100%;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Liberation Sans",Arial,Helvetica,sans-serif;
+    font-size:9.6pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  p{margin:0 0 7pt; max-width:none;}
+  strong{font-weight:600;}
+  ul,ol{margin:0 0 8pt; padding-left:14pt;}
+  li{margin-bottom:3.5pt;}
+  li::marker{color:var(--ink-3);}
+  code{font-family:"DejaVu Sans Mono",monospace; font-size:.86em; background:var(--panel-2); color:var(--pms533); padding:0 3px; border-radius:2px; white-space:nowrap;}
+
+  .page{page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .avoid{page-break-inside:avoid;}
+
+  /* ── Cover ─────────────────────────────────── */
+  .cover{display:flex; flex-direction:column; min-height:250mm;}
+  .cover .top{border-bottom:2.5pt solid var(--ink); padding-bottom:12pt;}
+  .eyebrow{font-size:7.6pt; font-weight:700; letter-spacing:.19em; text-transform:uppercase; color:var(--pms533); margin-bottom:14pt;}
+  h1{font-family:"DejaVu Serif",Georgia,serif; font-weight:600; font-size:31pt; line-height:1.08; letter-spacing:-.015em; margin:0 0 10pt; text-wrap:balance;}
+  .standfirst{font-family:"DejaVu Serif",Georgia,serif; font-size:12pt; line-height:1.5; color:var(--ink-2); margin:0;}
+  .cover .mid{margin-top:auto; padding-top:20pt;}
+
+  .inks{display:flex; flex-wrap:wrap; gap:11pt; margin:0; padding:0; list-style:none;}
+  .inks li{display:flex; align-items:center; gap:5pt; font-size:7.8pt; color:var(--ink-3); font-family:"DejaVu Sans Mono",monospace; margin:0;}
+  .sw{width:10pt; height:10pt; border-radius:50%; border:.5pt solid var(--rule); flex:none;}
+
+  .docmeta{display:grid; grid-template-columns:repeat(3,1fr); gap:1pt; background:var(--rule-soft); border:1pt solid var(--rule-soft); margin:18pt 0 0;}
+  .docmeta div{background:var(--paper); padding:8pt 9pt;}
+  .docmeta dt{font-size:7pt; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); margin:0 0 2pt;}
+  .docmeta dd{margin:0; font-size:9pt; font-weight:500;}
+
+  /* ── Sections ──────────────────────────────── */
+  section{margin-top:20pt;}
+  .sec-head{display:flex; align-items:baseline; gap:9pt; border-bottom:.75pt solid var(--rule); padding-bottom:5pt; margin-bottom:11pt; page-break-after:avoid;}
+  .sec-num{font-family:"DejaVu Sans Mono",monospace; font-size:8pt; font-weight:600; color:#fff; background:var(--pms533); padding:1.5pt 4.5pt; border-radius:2px; flex:none;}
+  h2{font-family:"DejaVu Serif",Georgia,serif; font-weight:600; font-size:16pt; line-height:1.2; margin:0; page-break-after:avoid;}
+  h3{font-size:8pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin:14pt 0 6pt; page-break-after:avoid;}
+
+  /* ── Chips ─────────────────────────────────── */
+  .chip{display:inline-block; font-size:6.8pt; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:1.5pt 4pt; border-radius:2px; white-space:nowrap; line-height:1.35;}
+  .c-have{background:var(--tint-teal); color:var(--pms7475);}
+  .c-soon{background:var(--tint-amber); color:var(--amber);}
+  .c-none{background:var(--tint-red); color:var(--pms7621);}
+  .c-info{background:var(--tint-slate); color:var(--pms533);}
+
+  /* ── Ledger ────────────────────────────────── */
+  .ledger{border:1pt solid var(--rule); margin-top:14pt; page-break-inside:avoid;}
+  .ledger-hd{padding:8pt 11pt; border-bottom:1pt solid var(--rule); background:var(--panel-2);}
+  .ledger-hd .t{font-family:"DejaVu Serif",Georgia,serif; font-size:11pt; font-weight:600;}
+  .ledger-hd .s{font-size:8.4pt; color:var(--ink-3);}
+  .lrow{display:grid; grid-template-columns:1fr auto; gap:10pt; align-items:center; padding:6pt 11pt; border-bottom:.5pt solid var(--rule-soft); font-size:9pt;}
+  .lrow:last-child{border-bottom:none;}
+  .lrow.bad{background:var(--tint-red);}
+  .lrow .lbl{color:var(--ink-2);} .lrow.bad .lbl{color:var(--ink); font-weight:600;}
+
+  /* ── Tables ────────────────────────────────── */
+  table{border-collapse:collapse; width:100%; font-size:8.6pt; margin:9pt 0 11pt; page-break-inside:avoid;}
+  thead th{text-align:left; padding:5pt 7pt; font-size:7pt; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); background:var(--panel-2); border-bottom:.75pt solid var(--rule);}
+  tbody td{padding:5pt 7pt; border-bottom:.5pt solid var(--rule-soft); vertical-align:top; color:var(--ink-2);}
+  tbody td:first-child{color:var(--ink); font-weight:500;}
+  .num{font-variant-numeric:tabular-nums; font-family:"DejaVu Sans Mono",monospace; font-size:8pt; white-space:nowrap;}
+
+  /* ── Callouts ──────────────────────────────── */
+  .flag,.note{padding:9pt 12pt; margin:11pt 0; page-break-inside:avoid;}
+  .flag{border-left:2.5pt solid var(--pms7621); background:var(--tint-red);}
+  .note{border-left:2.5pt solid var(--pms533); background:var(--tint-slate);}
+  .flag .hd,.note .hd{font-size:7.4pt; font-weight:700; letter-spacing:.11em; text-transform:uppercase; margin-bottom:4pt;}
+  .flag .hd{color:var(--pms7621);} .note .hd{color:var(--pms533);}
+  .flag p:last-child,.note p:last-child{margin-bottom:0;}
+
+  /* ── SKU blocks ────────────────────────────── */
+  .blocks{display:grid; grid-template-columns:repeat(4,1fr); gap:1pt; background:var(--rule); border:1pt solid var(--rule); margin:10pt 0; page-break-inside:avoid;}
+  .block{background:var(--paper); padding:8pt 9pt; display:flex; flex-direction:column; gap:3.5pt;}
+  .block .idx{font-family:"DejaVu Sans Mono",monospace; font-size:7pt; font-weight:600; color:var(--ink-3);}
+  .block .nm{font-family:"DejaVu Serif",Georgia,serif; font-size:10.5pt; font-weight:600; line-height:1.2;}
+  .block .fmt{font-size:7.8pt; color:var(--ink-3);}
+  .block .why{font-size:8pt; color:var(--ink-2); line-height:1.4; margin-top:auto; padding-top:2pt;}
+  .block .chip{align-self:flex-start;}
+
+  /* ── Artwork plates ────────────────────────── */
+  .plate{border:1pt solid var(--rule); margin-bottom:13pt; page-break-inside:avoid;}
+  .plate-hd{display:flex; justify-content:space-between; align-items:flex-start; gap:12pt; padding:8pt 11pt; background:var(--panel-2); border-bottom:1pt solid var(--rule);}
+  .plate-hd .nm{font-family:"DejaVu Serif",Georgia,serif; font-size:12.5pt; font-weight:600; line-height:1.15;}
+  .plate-hd .fmt{font-size:8pt; color:var(--ink-3); margin-top:1pt;}
+  .plate-hd .src{font-family:"DejaVu Sans Mono",monospace; font-size:6.8pt; color:var(--ink-3); text-align:right; max-width:52mm; word-break:break-all; line-height:1.4;}
+  .plate-body{display:grid; grid-template-columns:1fr 1fr; gap:0;}
+  .plate-art{padding:11pt; border-right:.5pt solid var(--rule-soft);}
+  .plate-side{padding:11pt;}
+  .plate-side h4{font-size:7.2pt; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--ink-3); margin:0 0 4pt;}
+  .plate-side h4+h4{margin-top:9pt;}
+  .kv{font-size:8.2pt; line-height:1.5; margin:0 0 7pt;}
+  .kv b{font-weight:600;}
+  .copyblock{font-family:"DejaVu Sans Mono",monospace; font-size:6.9pt; line-height:1.5; color:var(--ink-2); background:var(--panel-2); padding:6pt 7pt; border-left:1.5pt solid var(--rule); margin:0 0 7pt; white-space:pre-wrap;}
+
+  .legend{border-top:.5pt solid var(--rule-soft); padding:8pt 11pt; display:grid; grid-template-columns:1fr 1fr; gap:3pt 14pt;}
+  .lg{display:flex; gap:5pt; align-items:flex-start; font-size:7.8pt; line-height:1.35;}
+  .lg .pin{flex:none; width:11pt; height:11pt; border-radius:50%; font-size:6.6pt; font-weight:700; color:#fff; display:flex; align-items:center; justify-content:center; font-family:"DejaVu Sans Mono",monospace;}
+  .p-ok{background:var(--pms7475);} .p-warn{background:var(--amber);} .p-bad{background:var(--pms7621);}
+  .lg .tx{color:var(--ink-2);} .lg .tx b{color:var(--ink); font-weight:600;}
+
+  svg{display:block; width:100%; height:auto;}
+
+  footer{margin-top:22pt; padding-top:9pt; border-top:1.5pt solid var(--ink); font-size:7.8pt; color:var(--ink-3);}
+</style>
+</head>
+<body>
+
+<!-- ══════════ COVER ══════════ -->
+<div class="page cover">
+  <div class="top">
+    <div class="eyebrow">Sherlock Secrets · Trypillya Sun LLC · United States market</div>
+    <h1>Response to the pre-quotation information request</h1>
+    <p class="standfirst">A point-by-point answer to each item requested, stating what is enclosed, what exists but is not yet in usable form, and what does not yet exist — so the quotation can be built on what is real.</p>
+  </div>
+
+  <dl class="docmeta">
+    <div><dt>Producer</dt><dd>Trypillya Sun LLC, Obukhiv, UA</dd></div>
+    <div><dt>Brand</dt><dd>Sherlock Secrets</dd></div>
+    <div><dt>Compiled from</dt><dd>5 files · 2 specs, 3 artworks</dd></div>
+    <div><dt>Range</dt><dd>≈26 main SKUs, 5 formats</dd></div>
+    <div><dt>First block proposed</dt><dd>8 SKUs, 5 templates</dd></div>
+    <div><dt>Artwork plates</dt><dd>3, at pages 5–7</dd></div>
+  </dl>
+
+  <div class="ledger">
+    <div class="ledger-hd">
+      <div class="t">What you have, what follows, what does not exist</div>
+      <div class="s">Read this first. The five red rows are the ones that shape the quotation.</div>
+    </div>
+    <div class="lrow"><span class="lbl">Artwork — English Breakfast 100 g, English Breakfast 50 g, Earl Grey 50 g</span><span class="chip c-have">Enclosed</span></div>
+    <div class="lrow"><span class="lbl">Finished-product specifications — Earl Grey 50 g, Pure Ceylon 100 g</span><span class="chip c-have">Enclosed</span></div>
+    <div class="lrow"><span class="lbl">Ingredients, origin, shelf life, storage, EANs, on-pack lot-coding fields</span><span class="chip c-have">Enclosed</span></div>
+    <div class="lrow"><span class="lbl">Physico-chemical panel, mycotoxin and pesticide position</span><span class="chip c-have">Enclosed</span></div>
+    <div class="lrow"><span class="lbl">Specifications for the remaining 24 SKUs</span><span class="chip c-soon">On request</span></div>
+    <div class="lrow"><span class="lbl">Print-ready vector artwork (AI / PDF-X4, live text)</span><span class="chip c-soon">On request</span></div>
+    <div class="lrow"><span class="lbl">Allergen declarations per raw material + facility cross-contact assessment</span><span class="chip c-soon">In preparation</span></div>
+    <div class="lrow"><span class="lbl">IFS Food v8, ISO 9001, FDA registration certificates</span><span class="chip c-soon">On request</span></div>
+    <div class="lrow bad"><span class="lbl">US-format label — any SKU</span><span class="chip c-none">Does not exist</span></div>
+    <div class="lrow bad"><span class="lbl">Nutrition Facts panel — any SKU</span><span class="chip c-none">Does not exist</span></div>
+    <div class="lrow bad"><span class="lbl">Nutrition data on a US serving basis</span><span class="chip c-none">Basis under revision</span></div>
+    <div class="lrow bad"><span class="lbl">US responsible party / “Distributed by” entity</span><span class="chip c-none">Not nominated</span></div>
+    <div class="lrow bad"><span class="lbl">Compostability substantiation for the tea-bag construction</span><span class="chip c-none">Not held</span></div>
+  </div>
+
+  <div class="mid">
+    <div class="eyebrow" style="margin-bottom:7pt">Pack inks across the three artworks</div>
+    <ul class="inks">
+      <li><span class="sw" style="background:#14161c"></span>PANTONE Process Black C</li>
+      <li><span class="sw" style="background:#33465e"></span>PANTONE 533 C</li>
+      <li><span class="sw" style="background:#9c2b26"></span>PANTONE 7621 C</li>
+      <li><span class="sw" style="background:#256b6a"></span>PANTONE 7475 C</li>
+      <li><span class="sw" style="background:linear-gradient(135deg,#c9a227,#f0dd93)"></span>Gold foil</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════ 01–02 ══════════ -->
+<div class="page">
+  <section style="margin-top:0">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Current packaging and artwork</h2></div>
+    <p>Three print artworks are enclosed. All are premium cartons: gold foil, congreve blind embossing, gloss varnish 1+0, die-cut, on a shared two-ink base with a SKU-specific accent. Annotated plates for each begin at page 5.</p>
+    <table>
+      <thead><tr><th>SKU</th><th>Format</th><th>EAN (unit)</th><th>Accent ink</th><th>Plate</th></tr></thead>
+      <tbody>
+        <tr><td>English Breakfast</td><td>100 g loose leaf</td><td class="num">5065024042400</td><td>PANTONE 7621 C</td><td>A</td></tr>
+        <tr><td>English Breakfast</td><td>50 g · 25 bags × 2 g</td><td class="num">5065024042561</td><td>PANTONE 7621 C</td><td>B</td></tr>
+        <tr><td>Earl Grey</td><td>50 g · 25 bags × 2 g</td><td class="num">5065024042585</td><td>PANTONE 7475 C</td><td>C</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Two points, so they do not surface later as surprises</h3>
+    <p><strong>There is no US-format label in existence for any SKU.</strong> The current packs are built for the EU, UK and CEE markets. The English Breakfast 25-bag back panel is multilingual — English, Polish, Czech, Slovak — names Healthy Beverage Company Ltd (Manchester) as the supervising entity plus a Czech importer, and carries no US responsible party. Please quote this as <em>new US artwork creation</em>, not adaptation. Because the panel bears foreign-language text, <code>21 CFR 101.15(c)(2)</code> makes re-use impractical in any case.</p>
+    <p><strong>These were supplied as flattened JPGs.</strong> Colour build, finishes and coding windows are readable, but small mandatory type and available panel area are not verifiable from a raster. Print-ready vector files are available and will follow for whichever SKUs enter the first block.</p>
+
+    <div class="note">
+      <div class="hd">One useful starting point</div>
+      <p>The English Breakfast 100 g front panel already carries a dual net-quantity declaration — <strong>100 g / 3.53 oz</strong>. The two 50 g tea-bag packs are metric only and will need the US customary declaration added.</p>
+    </div>
+    <p>Each pack carries an on-pack variable-data coding field — <em>Date of production / Best before / Lot</em> — in a 30 × 16 mm window at 2.5 mm character height.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Ingredient lists and product specifications</h2></div>
+    <p>Two finished-product specifications are enclosed, issued by our Quality &amp; Food Safety function against ISO 9001 and IFS v8.</p>
+    <table>
+      <thead><tr><th></th><th>Earl Grey 50 g (25 × 2 g)</th><th>Pure Ceylon 100 g loose</th></tr></thead>
+      <tbody>
+        <tr><td>Document</td><td class="num">12391211 v.1 · 16.02.2026</td><td class="num">12381106 v.1 · 15.01.2026</td></tr>
+        <tr><td>Ingredients</td><td>Black leaf tea; natural additive (lemon peel)</td><td>Black leaf tea</td></tr>
+        <tr><td>Flavouring</td><td>Bergamot and lemon</td><td>None</td></tr>
+        <tr><td>Origin</td><td>Kenya</td><td>Sri Lanka (Ceylon Island)</td></tr>
+        <tr><td>Shelf life</td><td>2 years</td><td>3 years</td></tr>
+        <tr><td>EAN unit / carton</td><td class="num">5065024042585 / …592</td><td class="num">5065024042387 / …394</td></tr>
+      </tbody>
+    </table>
+    <p>Each specification also carries the full physico-chemical panel — water extract, ash fractions, ash alkalinity, acid-insoluble ash, crude fibre, moisture, foreign and metallic matter — the microbiological position (Aflatoxin B1 not detected), and a pesticide statement (“within the level of EU regulation”). For English Breakfast the ingredient position is on-pack — <strong>black tea; countries of origin India, Kenya, Sri Lanka</strong> — but the specification has not yet been issued.</p>
+
+    <h3>Coverage gap in this first sample</h3>
+    <table>
+      <thead><tr><th>SKU</th><th>Specification</th><th>Artwork</th></tr></thead>
+      <tbody>
+        <tr><td>Earl Grey 50 g</td><td><span class="chip c-have">Held</span></td><td><span class="chip c-have">Held</span></td></tr>
+        <tr><td>Pure Ceylon 100 g</td><td><span class="chip c-have">Held</span></td><td><span class="chip c-none">Missing</span></td></tr>
+        <tr><td>English Breakfast 100 g</td><td><span class="chip c-none">Missing</span></td><td><span class="chip c-have">Held</span></td></tr>
+        <tr><td>English Breakfast 50 g</td><td><span class="chip c-none">Missing</span></td><td><span class="chip c-have">Held</span></td></tr>
+      </tbody>
+    </table>
+    <p><strong>Only Earl Grey 50 g is a complete matched pair.</strong> If a matched set is what you need to scope accurately, say so and we will issue the two missing specifications and the Pure Ceylon artwork before you begin.</p>
+  </section>
+</div>
+
+<!-- ══════════ 03–04 ══════════ -->
+<div class="page">
+  <section style="margin-top:0">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Nutrition Facts and the underlying compositional data</h2></div>
+    <p>This is the largest gap, and we would rather flag it than let you find it. <strong>No US-format Nutrition Facts panel exists for any SKU</strong>, and none of the current artwork carries a nutrition panel at all. What exists is an EU-style declaration inside each specification, stated per 100 g of product:</p>
+    <table>
+      <thead><tr><th>SKU</th><th>Energy</th><th>Fat</th><th>Carbohydrate</th><th>Protein</th></tr></thead>
+      <tbody>
+        <tr><td>Earl Grey 50 g</td><td class="num">0.02 kcal / 0.1 kJ</td><td class="num">0 g</td><td class="num">0.003 g</td><td class="num">0.001 g</td></tr>
+        <tr><td>Pure Ceylon 100 g</td><td class="num">0 kcal</td><td class="num">0 g</td><td class="num">0 g</td><td class="num">0 g</td></tr>
+      </tbody>
+    </table>
+    <div class="flag">
+      <div class="hd">These figures cannot be carried into a US panel as they stand</div>
+      <p>They are labelled “per 100 g of product”, but dry black tea leaf is in the order of 250–350 kcal/100 g, and even a brewed infusion is around 1 kcal/100 mL. They look like brewed-infusion values entered into an “as sold” field, and they are not consistent between the two SKUs — 0.02 against 0. We are re-establishing the basis internally.</p>
+    </div>
+    <p>We would welcome your recommendation on the route. Our working assumption: plain tea declared on a serving of one tea bag (2 g), or one teaspoon of loose leaf, making 8 fl oz (240 mL) prepared — consistent with the RACC at <code>21 CFR 101.12</code> — all values zero, using the simplified format under <code>21 CFR 101.9(f)</code> with the “Not a significant source of…” footnote.</p>
+    <p>If you agree, please quote on that basis and tell us whether you need laboratory certificates of analysis or will accept a validated database calculation. If either the small-package or the low-volume exemption is realistically open to us, we would like that assessed inside the first block — it materially changes the cost across 26 SKUs.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Allergens, origin, lot coding and durable life</h2></div>
+    <h3>Allergens</h3>
+    <p>Both specifications state <strong>“No Allergen”</strong> and <strong>“Non GMO”</strong>. We recognise a bare statement is not sufficient evidence for a US position. We will provide signed allergen declarations for each raw material together with a cross-contact assessment for the Obukhiv facility, covering all nine US majors including sesame. Please confirm the format you want these in.</p>
+    <h3>Country of origin</h3>
+    <p>Earl Grey — Kenya. Pure Ceylon — Sri Lanka. English Breakfast — India, Kenya, Sri Lanka. Blending and packing are carried out at Trypillya Sun LLC, 46 Trypolska str., Obukhiv, Kyiv region, 08700, Ukraine. <strong>The current artwork carries no “Product of Ukraine” marking.</strong> We would like your determination on whether blending and packing in Ukraine constitutes substantial transformation for CBP marking under <code>19 CFR 134</code> — one answer applies across the whole range, and we would rather settle it once.</p>
+    <h3>Lot coding</h3>
+    <p>The coding field is already in the artwork, so no structural change is needed. We would like your recommendation on an unambiguous US date format — we are conscious of the DD/MM against MM/DD problem — and on whether 2.5 mm character height is adequate.</p>
+    <h3>Durable life</h3>
+    <p>Shelf life differs by SKU and format: <strong>2 years</strong> for Earl Grey 50 g tea bags, <strong>3 years</strong> for Pure Ceylon 100 g loose. Storage conditions are common across the range — dark, dry, ambient maximum 25 °C, RH below 75 %, original closed containers, odour-free storage area.</p>
+    <h3>Regulatory standing</h3>
+    <p>The facility holds <strong>IFS Food v8</strong> (to November 2026) and an <strong>FDA food facility registration</strong> (stated valid to December 2026). We note 2026 is a biennial renewal year with the window running 1 October to 31 December, and we will confirm our US Agent appointment.</p>
+  </section>
+</div>
+
+<!-- ══════════ 05–06 ══════════ -->
+<div class="page">
+  <section style="margin-top:0">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Claims and marketing statements on pack</h2></div>
+    <p>Current on-pack claims fall into three groups. Verbatim panel copy for each SKU is reproduced on the artwork plates that follow.</p>
+    <h3>Sensory and descriptive — low risk, US wording to review</h3>
+    <p>“A traditional blend of three varieties of tea — bright malty taste of Indian Assam tea with natural strength and fullness, deep rich velvety taste of Kenyan tea, rich honey aroma of Ceylon tea. This tea perfectly tastes good with sugar and milk.” (English Breakfast 100 g). Earl Grey carries an equivalent bouquet description. Each pack also carries a brewing instruction block.</p>
+    <h3>Identity descriptors on the front panel</h3>
+    <p>“RICH BLACK TEA”, “BLACK TEA WITH BERGAMOT AND LEMON <em>AROMA</em>”, “premium quality”. We expect “aroma” to need re-working into US common-or-usual name and “natural flavor” conventions under <code>21 CFR 101.4</code>.</p>
+    <div class="flag">
+      <div class="hd">The environmental claim — your view first, please</div>
+      <p>The English Breakfast 25-bag pack states: <strong>“Our teabags are compostable. Suitable for home composting.”</strong> We understand that under the FTC Green Guides (<code>16 CFR 260.7</code>) an unqualified compostability claim carries a real substantiation burden in the US, and that a home-composting claim would need third-party certification covering the entire bag construction — filter paper, thread, tag and seal.</p>
+      <p>Please advise whether to <strong>(a)</strong> substantiate and qualify it, <strong>(b)</strong> reduce it to a material statement, or <strong>(c)</strong> remove it from the US artwork. This affects every tea-bag SKU, so we would like it settled inside the first block rather than repeated 26 times.</p>
+    </div>
+    <p>We would also flag two brand-level claims used in our trade materials, in case they migrate onto US packaging or the US website: <em>“Top 5 tea brand in Ukraine”</em> and <em>“No. 2 packaged tea company in Ukraine”</em>. Both are substantiable but competitive, and we assume they need review before any US use.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Scope for the quotation</h2></div>
+    <p>The range is approximately <strong>26 main SKUs</strong> — 7 loose teas, 9 sachet products, 7 tea-bag products and 3 in a new line — plus 100-count variants of English Breakfast and Earl Grey, across five formats. Rather than 26 independent projects, these collapse into <strong>five composition templates</strong>, and we would ask you to price on that structure. Once a template is cleared, each additional SKU inside it is variant work.</p>
+    <table>
+      <thead><tr><th>Template</th><th>Description</th><th>SKUs</th><th>Effort</th></tr></thead>
+      <tbody>
+        <tr><td>T1</td><td>Single-origin unflavoured tea</td><td>Pure Ceylon, Rich Assam, Pure Green, The Finest Ceylon</td><td>Lowest</td></tr>
+        <tr><td>T2</td><td>Multi-origin unflavoured blend</td><td>English Breakfast (loose, 25 bags, 100 bags)</td><td>Low</td></tr>
+        <tr><td>T3</td><td>Flavoured black tea</td><td>Earl Grey, Bergamot Prime</td><td>Medium</td></tr>
+        <tr><td>T4</td><td>Botanical / herbal blends</td><td>Pleasure Time, Spring Feeling, Alpine Meadow, Green Melissa, Jasmine, Milk Oolong</td><td>Highest</td></tr>
+        <tr><td>T5</td><td>Format variants of a cleared template</td><td>100-bag versions, 180 g large loose packs</td><td>Lowest</td></tr>
+      </tbody>
+    </table>
+    <h3>Proposed first block — 8 SKUs, every template represented</h3>
+    <div class="blocks">
+      <div class="block"><span class="idx">01 · T1</span><span class="nm">Pure Ceylon</span><span class="fmt">100 g loose</span><span class="chip c-info">Spec held</span><span class="why">Simplest case. Specification already issued.</span></div>
+      <div class="block"><span class="idx">02 · T2</span><span class="nm">English Breakfast</span><span class="fmt">100 g loose</span><span class="chip c-info">Artwork held</span><span class="why">Multi-origin blend; already carries a dual net-quantity declaration.</span></div>
+      <div class="block"><span class="idx">03 · T2 / T5</span><span class="nm">English Breakfast</span><span class="fmt">50 g · 25 bags</span><span class="chip c-info">Artwork held</span><span class="why">Bag format, and the pack carrying the compostability claim.</span></div>
+      <div class="block"><span class="idx">04 · T3</span><span class="nm">Earl Grey</span><span class="fmt">50 g · 25 bags</span><span class="chip c-have">Complete pair</span><span class="why">The only spec + artwork pair held today. Flavoured reference case.</span></div>
+      <div class="block"><span class="idx">05 · T1</span><span class="nm">Pure Green</span><span class="fmt">100 g loose</span><span class="chip c-soon">To follow</span><span class="why">Green tea — separate nutrition and origin basis (China).</span></div>
+      <div class="block"><span class="idx">06 · T4</span><span class="nm">Pleasure Time</span><span class="fmt">22 sachets × 2 g</span><span class="chip c-soon">To follow</span><span class="why">Most complex composition: rose petals, orange flowers, lemongrass, passionfruit and mango flavouring.</span></div>
+      <div class="block"><span class="idx">07 · T3 / T5</span><span class="nm">Bergamot Prime</span><span class="fmt">180 g loose</span><span class="chip c-soon">To follow</span><span class="why">Large loose format, second flavoured case.</span></div>
+      <div class="block"><span class="idx">08 · T4</span><span class="nm">Milk Oolong</span><span class="fmt">100 g loose</span><span class="chip c-soon">To follow</span><span class="why">Oolong identity, and a name we want reviewed early: the product contains no milk.</span></div>
+    </div>
+    <p>If you would prefer a block of five, we suggest items 01–04 plus item 06, which still touches four of the five templates.</p>
+    <h3>Please price these separately</h3>
+    <ul>
+      <li><strong>Per-SKU US label build</strong> — Nutrition Facts panel, ingredient statement, allergen and origin statements, net-quantity conversion, responsible-party block.</li>
+      <li><strong>The four cross-cutting determinations, priced once for the whole range rather than per SKU</strong> — nutrition basis and RACC; the compostability claim; country-of-origin marking; US responsible party and FSVP structure.</li>
+      <li><strong>Artwork implementation against review-only</strong> — we hold in-house pre-press capability and may execute the artwork ourselves to your specification.</li>
+      <li><strong>Volume pricing for the remaining ~18 SKUs</strong>, on the assumption that once a template is cleared each additional SKU inside it is variant work.</li>
+    </ul>
+    <p>Items 05, 07 and 08 are not yet in the shared folder. Confirm the block you want and we will send specifications and print-ready vector artwork for all eight within the same week.</p>
+  </section>
+</div>
+
+<!-- ══════════ ARTWORK PLATES ══════════ -->
+<div class="page">
+  <section style="margin-top:0">
+    <div class="sec-head"><span class="sec-num">A–C</span><h2>Artwork plates</h2></div>
+    <p>One plate per supplied artwork. Each reproduces the print specification, the verbatim panel copy read off the file, and a schematic of the carton faces with the US mandatory elements pinned to where they sit — or where they are absent. <strong>The schematics are compliance diagrams drawn to scale ratio, not reproductions of the artwork</strong>; the source file is named on each plate and the print-ready vector remains the controlling document.</p>
+
+    <!-- ── PLATE A ── -->
+    <div class="plate">
+      <div class="plate-hd">
+        <div><div class="nm">Plate A — English Breakfast</div><div class="fmt">100 g loose leaf · EAN 5065024042400 · accent PANTONE 7621 C</div></div>
+        <div class="src">Sherlock_ENGLISH_BREAKFAST_<br>List_100_BO_CURV.jpg</div>
+      </div>
+      <div class="plate-body">
+        <div class="plate-art">
+          <svg viewBox="0 0 300 210" role="img" aria-label="Schematic of the English Breakfast 100 g carton front and back panels">
+            <defs><linearGradient id="gA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9c2b26"/><stop offset="1" stop-color="#6f1d1a"/></linearGradient></defs>
+            <!-- FRONT -->
+            <rect x="6" y="16" width="126" height="188" fill="url(#gA)" stroke="#14161c" stroke-width="1"/>
+            <text x="69" y="10" font-family="Liberation Sans" font-size="7" font-weight="700" fill="#6b7385" text-anchor="middle" letter-spacing="1.2">FRONT / PDP</text>
+            <rect x="18" y="30" width="102" height="26" fill="none" stroke="#f0dd93" stroke-width="1"/>
+            <text x="69" y="42" font-family="DejaVu Serif" font-size="10" font-weight="700" fill="#f0dd93" text-anchor="middle" letter-spacing="1">SHERLOCK</text>
+            <text x="69" y="52" font-family="DejaVu Serif" font-size="8" font-weight="600" fill="#f0dd93" text-anchor="middle" letter-spacing="2.6">SECRETS</text>
+            <text x="69" y="104" font-family="DejaVu Serif" font-size="11" font-style="italic" fill="#ffffff" text-anchor="middle">English Breakfast</text>
+            <text x="69" y="118" font-family="Liberation Sans" font-size="6.5" font-weight="600" fill="#e8cfcd" text-anchor="middle" letter-spacing="1.6">RICH BLACK TEA</text>
+            <text x="69" y="182" font-family="Liberation Sans" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">100 g    3.53 oz</text>
+            <circle cx="120" cy="176" r="7" fill="#256b6a"/><text x="120" y="179" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+            <circle cx="120" cy="136" r="7" fill="#8a5a10"/><text x="120" y="139" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+            <!-- BACK -->
+            <rect x="168" y="16" width="126" height="188" fill="#f4f2ee" stroke="#14161c" stroke-width="1"/>
+            <text x="231" y="10" font-family="Liberation Sans" font-size="7" font-weight="700" fill="#6b7385" text-anchor="middle" letter-spacing="1.2">BACK</text>
+            <g fill="#9aa0ad">
+              <rect x="180" y="30" width="102" height="2.4"/><rect x="180" y="36" width="102" height="2.4"/><rect x="180" y="42" width="86" height="2.4"/>
+              <rect x="180" y="48" width="102" height="2.4"/><rect x="180" y="54" width="74" height="2.4"/>
+            </g>
+            <text x="180" y="74" font-family="Liberation Sans" font-size="6" font-weight="700" fill="#3b414e" letter-spacing="1">BREWING INSTRUCTION</text>
+            <g fill="#c2c7d0"><rect x="180" y="80" width="102" height="2.2"/><rect x="180" y="86" width="90" height="2.2"/></g>
+            <rect x="180" y="98" width="102" height="26" fill="none" stroke="#9c2b26" stroke-width="1" stroke-dasharray="3 2"/>
+            <text x="231" y="114" font-family="Liberation Sans" font-size="6.4" font-weight="700" fill="#9c2b26" text-anchor="middle">NO NUTRITION FACTS PANEL</text>
+            <circle cx="286" cy="98" r="7" fill="#9c2b26"/><text x="286" y="101" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+            <rect x="180" y="132" width="102" height="18" fill="none" stroke="#9c2b26" stroke-width="1" stroke-dasharray="3 2"/>
+            <text x="231" y="143" font-family="Liberation Sans" font-size="6.4" font-weight="700" fill="#9c2b26" text-anchor="middle">NO US RESPONSIBLE PARTY</text>
+            <circle cx="286" cy="132" r="7" fill="#9c2b26"/><text x="286" y="135" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+            <rect x="180" y="158" width="46" height="24" fill="#14161c"/>
+            <g fill="#f4f2ee"><rect x="184" y="162" width="3" height="16"/><rect x="189" y="162" width="1.5" height="16"/><rect x="193" y="162" width="4" height="16"/><rect x="199" y="162" width="2" height="16"/><rect x="203" y="162" width="3" height="16"/><rect x="209" y="162" width="1.5" height="16"/><rect x="213" y="162" width="4" height="16"/><rect x="219" y="162" width="2" height="16"/></g>
+            <rect x="236" y="158" width="46" height="16" fill="none" stroke="#256b6a" stroke-width="1"/>
+            <text x="259" y="168" font-family="DejaVu Sans Mono" font-size="4" fill="#256b6a" text-anchor="middle">LOT / BB · 30×16</text>
+            <circle cx="286" cy="166" r="7" fill="#256b6a"/><text x="286" y="169" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+          </svg>
+        </div>
+        <div class="plate-side">
+          <h4>Print specification</h4>
+          <p class="kv"><b>Inks</b> PANTONE Process Black C · PANTONE 7621 C · PANTONE 533 C · gold foil<br><b>Finishes</b> Gloss varnish 1+0 · congreve (blind emboss) · die-cut<br><b>Coding window</b> 30 × 16 mm</p>
+          <h4>Panel copy, verbatim</h4>
+          <div class="copyblock">ENGLISH BREAKFAST — A TRADITIONAL BLEND OF THREE VARIETIES OF TEA — BRIGHT MALTY TASTE OF INDIAN ASSAM TEA WITH NATURAL STRENGTH AND FULLNESS, DEEP RICH VELVETY TASTE OF KENYAN TEA, RICH HONEY AROMA OF CEYLON TEA. THIS TEA PERFECTLY TASTES GOOD WITH SUGAR AND MILK.
+
+NET WEIGHT: 100 g / 3.53 oz</div>
+        </div>
+      </div>
+      <div class="legend">
+        <div class="lg"><span class="pin p-ok">1</span><span class="tx"><b>Net quantity, dual declaration.</b> 100 g / 3.53 oz already present on the PDP. Confirm placement in the lower 30 % and type height.</span></div>
+        <div class="lg"><span class="pin p-warn">2</span><span class="tx"><b>Statement of identity.</b> “RICH BLACK TEA” — acceptable, review against US common-or-usual name.</span></div>
+        <div class="lg"><span class="pin p-bad">3</span><span class="tx"><b>Nutrition Facts absent.</b> No panel anywhere on the carton.</span></div>
+        <div class="lg"><span class="pin p-bad">4</span><span class="tx"><b>No US responsible party.</b> “Distributed by” block required under 21 CFR 101.5.</span></div>
+        <div class="lg"><span class="pin p-ok">5</span><span class="tx"><b>Lot / best-before field present.</b> 30 × 16 mm window; US date format to be agreed.</span></div>
+        <div class="lg"><span class="pin p-bad">6</span><span class="tx"><b>No “Product of Ukraine” marking</b> anywhere on the pack (19 CFR 134).</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── PLATE B ── -->
+<div class="page">
+  <div class="plate">
+    <div class="plate-hd">
+      <div><div class="nm">Plate B — English Breakfast</div><div class="fmt">50 g · 25 tea bags × 2 g · EAN 5065024042561 · accent PANTONE 7621 C</div></div>
+      <div class="src">Sherlock_ENGLISH_BREAKFAST_<br>25p_Eng-01.jpg</div>
+    </div>
+    <div class="plate-body">
+      <div class="plate-art">
+        <svg viewBox="0 0 300 210" role="img" aria-label="Schematic of the English Breakfast 25-bag carton front and back panels">
+          <defs><linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9c2b26"/><stop offset="1" stop-color="#6f1d1a"/></linearGradient></defs>
+          <rect x="6" y="16" width="126" height="188" fill="url(#gB)" stroke="#14161c" stroke-width="1"/>
+          <text x="69" y="10" font-family="Liberation Sans" font-size="7" font-weight="700" fill="#6b7385" text-anchor="middle" letter-spacing="1.2">FRONT / PDP</text>
+          <rect x="18" y="30" width="102" height="26" fill="none" stroke="#f0dd93" stroke-width="1"/>
+          <text x="69" y="42" font-family="DejaVu Serif" font-size="10" font-weight="700" fill="#f0dd93" text-anchor="middle" letter-spacing="1">SHERLOCK</text>
+          <text x="69" y="52" font-family="DejaVu Serif" font-size="8" font-weight="600" fill="#f0dd93" text-anchor="middle" letter-spacing="2.6">SECRETS</text>
+          <text x="69" y="104" font-family="DejaVu Serif" font-size="11" font-style="italic" fill="#ffffff" text-anchor="middle">English Breakfast</text>
+          <text x="69" y="118" font-family="Liberation Sans" font-size="6.5" font-weight="600" fill="#e8cfcd" text-anchor="middle" letter-spacing="1.6">RICH BLACK TEA</text>
+          <text x="69" y="176" font-family="Liberation Sans" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle">NET WEIGHT: 50 g</text>
+          <text x="69" y="187" font-family="Liberation Sans" font-size="6" fill="#e8cfcd" text-anchor="middle">25 tea bags × 2 g</text>
+          <rect x="18" y="168" width="102" height="24" fill="none" stroke="#f6b0aa" stroke-width="1" stroke-dasharray="3 2"/>
+          <circle cx="120" cy="168" r="7" fill="#9c2b26"/><text x="120" y="171" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+          <circle cx="120" cy="136" r="7" fill="#8a5a10"/><text x="120" y="139" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+          <rect x="168" y="16" width="126" height="188" fill="#f4f2ee" stroke="#14161c" stroke-width="1"/>
+          <text x="231" y="10" font-family="Liberation Sans" font-size="7" font-weight="700" fill="#6b7385" text-anchor="middle" letter-spacing="1.2">BACK — EN / PL / CZ / SK</text>
+          <rect x="176" y="24" width="110" height="40" fill="#e5e9f0" stroke="#33465e" stroke-width=".7"/>
+          <text x="231" y="38" font-family="Liberation Sans" font-size="6.2" font-weight="700" fill="#33465e" text-anchor="middle">FOUR-LANGUAGE BACK PANEL</text>
+          <text x="231" y="48" font-family="Liberation Sans" font-size="5.6" fill="#3b414e" text-anchor="middle">English · Polish · Czech · Slovak</text>
+          <text x="231" y="57" font-family="Liberation Sans" font-size="5.6" fill="#9c2b26" text-anchor="middle">blocks US re-use — 21 CFR 101.15(c)(2)</text>
+          <circle cx="290" cy="24" r="7" fill="#9c2b26"/><text x="290" y="27" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">7</text>
+          <g fill="#9aa0ad"><rect x="176" y="72" width="110" height="2.2"/><rect x="176" y="78" width="110" height="2.2"/><rect x="176" y="84" width="88" height="2.2"/></g>
+          <rect x="176" y="94" width="110" height="16" fill="#f6e7e5" stroke="#9c2b26" stroke-width=".8"/>
+          <text x="231" y="104" font-family="Liberation Sans" font-size="6" font-weight="700" fill="#9c2b26" text-anchor="middle">“compostable · home composting”</text>
+          <circle cx="290" cy="94" r="7" fill="#9c2b26"/><text x="290" y="97" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">8</text>
+          <rect x="176" y="118" width="110" height="24" fill="none" stroke="#9c2b26" stroke-width="1" stroke-dasharray="3 2"/>
+          <text x="231" y="133" font-family="Liberation Sans" font-size="6.4" font-weight="700" fill="#9c2b26" text-anchor="middle">NO NUTRITION FACTS PANEL</text>
+          <circle cx="290" cy="118" r="7" fill="#9c2b26"/><text x="290" y="121" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+          <rect x="176" y="148" width="110" height="16" fill="#eef0f4" stroke="#8a5a10" stroke-width=".8"/>
+          <text x="231" y="158" font-family="Liberation Sans" font-size="5.8" fill="#8a5a10" text-anchor="middle">UK supervising entity + CZ importer</text>
+          <circle cx="290" cy="148" r="7" fill="#9c2b26"/><text x="290" y="151" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+          <rect x="176" y="172" width="46" height="24" fill="#14161c"/>
+          <g fill="#f4f2ee"><rect x="180" y="176" width="3" height="16"/><rect x="185" y="176" width="1.5" height="16"/><rect x="189" y="176" width="4" height="16"/><rect x="195" y="176" width="2" height="16"/><rect x="199" y="176" width="3" height="16"/><rect x="205" y="176" width="1.5" height="16"/><rect x="209" y="176" width="4" height="16"/><rect x="215" y="176" width="2" height="16"/></g>
+          <rect x="232" y="172" width="54" height="16" fill="none" stroke="#256b6a" stroke-width="1"/>
+          <text x="259" y="182" font-family="DejaVu Sans Mono" font-size="4.2" fill="#256b6a" text-anchor="middle">DATE / BB / LOT</text>
+          <circle cx="290" cy="180" r="7" fill="#256b6a"/><text x="290" y="183" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+        </svg>
+      </div>
+      <div class="plate-side">
+        <h4>Print specification</h4>
+        <p class="kv"><b>Inks</b> CMYK + gold foil · PANTONE Process Black C · 7621 C · 533 C<br><b>Coding</b> 30 × 16 mm window, 2.5 mm characters<br><b>Fields</b> Date of production / Best before / Lot</p>
+        <h4>Back panel copy, verbatim (English)</h4>
+        <div class="copyblock">SHERLOCK SECRETS ENGLISH BREAKFAST BLACK TEA, TEA BAGS. Ingredients: black tea. Countries of origin: India, Kenya, Sri Lanka (Ceylon Island), 25 tea bags each. Net weight: 50 g. Date of manufacture is indicated on the package. Store in a dry place, in a tightly closed packaging. See brewing instructions on the package. Our teabags are compostable. Suitable for home composting. Produced under the supervision of: HEALTHY BEVERAGE COMPANY LTD, Initial Business Centre, Unit 7, Wilson Business Park, Manchester, United Kingdom. Production facilities located in Ukraine: LLC Trypillya Sun, 46 Trypilska str., Obukhiv, Kyiv region, 08700, Ukraine.</div>
+        <p class="kv" style="font-size:7.4pt;color:#6b7385">Polish, Czech and Slovak translations of the same statement follow on the panel, plus a Czech-market importer line.</p>
+      </div>
+    </div>
+    <div class="legend">
+      <div class="lg"><span class="pin p-bad">1</span><span class="tx"><b>Net quantity is metric only.</b> “1.76 oz” must be added alongside 50 g.</span></div>
+      <div class="lg"><span class="pin p-warn">2</span><span class="tx"><b>Statement of identity</b> to be reviewed against US naming.</span></div>
+      <div class="lg"><span class="pin p-bad">3</span><span class="tx"><b>Nutrition Facts absent.</b></span></div>
+      <div class="lg"><span class="pin p-bad">4</span><span class="tx"><b>UK entity and Czech importer only</b> — no US responsible party.</span></div>
+      <div class="lg"><span class="pin p-ok">5</span><span class="tx"><b>Lot / date coding field present</b> and correctly sized for variable data.</span></div>
+      <div class="lg"><span class="pin p-bad">7</span><span class="tx"><b>Four-language back panel.</b> Triggers 21 CFR 101.15(c)(2) — a dedicated US pack is the only practical route.</span></div>
+      <div class="lg"><span class="pin p-bad">8</span><span class="tx"><b>Home-composting claim.</b> Highest-risk statement in the set under FTC Green Guides 16 CFR 260.7.</span></div>
+      <div class="lg"><span class="pin p-bad">6</span><span class="tx"><b>No “Product of Ukraine” marking</b> — origins are given for the tea only.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PLATE C ── -->
+<div class="page">
+  <div class="plate">
+    <div class="plate-hd">
+      <div><div class="nm">Plate C — Earl Grey</div><div class="fmt">50 g · 25 tea bags × 2 g · EAN 5065024042585 · accent PANTONE 7475 C</div></div>
+      <div class="src">Sherlock_EARL_GREY_<br>25p_Eng-01.jpg</div>
+    </div>
+    <div class="plate-body">
+      <div class="plate-art">
+        <svg viewBox="0 0 300 210" role="img" aria-label="Schematic of the Earl Grey 25-bag carton front and back panels">
+          <defs><linearGradient id="gC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f7d7b"/><stop offset="1" stop-color="#1c5250"/></linearGradient></defs>
+          <rect x="6" y="16" width="126" height="188" fill="url(#gC)" stroke="#14161c" stroke-width="1"/>
+          <text x="69" y="10" font-family="Liberation Sans" font-size="7" font-weight="700" fill="#6b7385" text-anchor="middle" letter-spacing="1.2">FRONT / PDP</text>
+          <rect x="18" y="30" width="102" height="26" fill="none" stroke="#f0dd93" stroke-width="1"/>
+          <text x="69" y="42" font-family="DejaVu Serif" font-size="10" font-weight="700" fill="#f0dd93" text-anchor="middle" letter-spacing="1">SHERLOCK</text>
+          <text x="69" y="52" font-family="DejaVu Serif" font-size="8" font-weight="600" fill="#f0dd93" text-anchor="middle" letter-spacing="2.6">SECRETS</text>
+          <text x="69" y="102" font-family="DejaVu Serif" font-size="15" font-style="italic" fill="#ffffff" text-anchor="middle">Earl Grey</text>
+          <text x="69" y="115" font-family="Liberation Sans" font-size="5" font-weight="600" fill="#cfe6e4" text-anchor="middle" letter-spacing=".2">BLACK TEA WITH BERGAMOT</text>
+          <text x="69" y="123" font-family="Liberation Sans" font-size="5" font-weight="600" fill="#cfe6e4" text-anchor="middle" letter-spacing=".2">AND LEMON AROMA</text>
+          <text x="69" y="176" font-family="Liberation Sans" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle">NET WEIGHT: 50 g</text>
+          <text x="69" y="187" font-family="Liberation Sans" font-size="6" fill="#cfe6e4" text-anchor="middle">25 tea bags × 2 g</text>
+          <rect x="18" y="168" width="102" height="24" fill="none" stroke="#f6b0aa" stroke-width="1" stroke-dasharray="3 2"/>
+          <circle cx="120" cy="168" r="7" fill="#9c2b26"/><text x="120" y="171" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+          <circle cx="120" cy="140" r="7" fill="#8a5a10"/><text x="120" y="143" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">9</text>
+          <rect x="168" y="16" width="126" height="188" fill="#f4f2ee" stroke="#14161c" stroke-width="1"/>
+          <text x="231" y="10" font-family="Liberation Sans" font-size="7" font-weight="700" fill="#6b7385" text-anchor="middle" letter-spacing="1.2">BACK</text>
+          <g fill="#9aa0ad"><rect x="180" y="30" width="102" height="2.4"/><rect x="180" y="36" width="102" height="2.4"/><rect x="180" y="42" width="86" height="2.4"/><rect x="180" y="48" width="96" height="2.4"/></g>
+          <text x="180" y="68" font-family="Liberation Sans" font-size="6" font-weight="700" fill="#3b414e" letter-spacing="1">BREWING INSTRUCTION</text>
+          <g fill="#c2c7d0"><rect x="180" y="74" width="102" height="2.2"/><rect x="180" y="80" width="90" height="2.2"/></g>
+          <rect x="180" y="92" width="102" height="24" fill="none" stroke="#9c2b26" stroke-width="1" stroke-dasharray="3 2"/>
+          <text x="231" y="107" font-family="Liberation Sans" font-size="6.4" font-weight="700" fill="#9c2b26" text-anchor="middle">NO NUTRITION FACTS PANEL</text>
+          <circle cx="286" cy="92" r="7" fill="#9c2b26"/><text x="286" y="95" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+          <rect x="180" y="124" width="102" height="18" fill="none" stroke="#9c2b26" stroke-width="1" stroke-dasharray="3 2"/>
+          <text x="231" y="135" font-family="Liberation Sans" font-size="6.4" font-weight="700" fill="#9c2b26" text-anchor="middle">NO US RESPONSIBLE PARTY</text>
+          <circle cx="286" cy="124" r="7" fill="#9c2b26"/><text x="286" y="127" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+          <rect x="180" y="152" width="46" height="24" fill="#14161c"/>
+          <g fill="#f4f2ee"><rect x="184" y="156" width="3" height="16"/><rect x="189" y="156" width="1.5" height="16"/><rect x="193" y="156" width="4" height="16"/><rect x="199" y="156" width="2" height="16"/><rect x="203" y="156" width="3" height="16"/><rect x="209" y="156" width="1.5" height="16"/><rect x="213" y="156" width="4" height="16"/><rect x="219" y="156" width="2" height="16"/></g>
+          <rect x="232" y="152" width="50" height="16" fill="none" stroke="#256b6a" stroke-width="1"/>
+          <text x="257" y="162" font-family="DejaVu Sans Mono" font-size="4.2" fill="#256b6a" text-anchor="middle">DATE / BB / LOT</text>
+          <circle cx="286" cy="160" r="7" fill="#256b6a"/><text x="286" y="163" font-family="DejaVu Sans Mono" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+        </svg>
+      </div>
+      <div class="plate-side">
+        <h4>Print specification</h4>
+        <p class="kv"><b>Inks</b> CMYK + gold foil · PANTONE Process Black C · 7475 C · 533 C<br><b>Coding</b> 30 × 16 mm window, 2.5 mm characters<br><b>Fields</b> Date of production / Best before / Lot</p>
+        <h4>Matched specification 12391211</h4>
+        <p class="kv"><b>Ingredients</b> black leaf tea, natural additive (lemon peel)<br><b>Flavouring</b> bergamot and lemon<br><b>Origin</b> Kenya · <b>Shelf life</b> 2 years<br><b>Carton EAN</b> 5065024042592</p>
+        <h4>Panel copy, verbatim</h4>
+        <div class="copyblock">EARL GREY … THE CLASSIC … SELECTED BLACK RICH TEA AND FRAGRANT BOUQUET IS COMPLEMENTED BY SUNNY [LEMON] … THAT EVERYBODY WILL LOVE
+
+NET WEIGHT: 50 g · 25 tea bags × 2 g
+Date of production:   Best before:   Lot:</div>
+        <p class="kv" style="font-size:7.4pt;color:#6b7385">Ellipses mark text not fully resolvable from the flattened JPG. To be confirmed against the vector original.</p>
+      </div>
+    </div>
+    <div class="legend">
+      <div class="lg"><span class="pin p-bad">1</span><span class="tx"><b>Net quantity is metric only.</b> “1.76 oz” must be added alongside 50 g.</span></div>
+      <div class="lg"><span class="pin p-warn">9</span><span class="tx"><b>“…WITH BERGAMOT AND LEMON AROMA”.</b> EU construction; US convention is “natural flavor” (21 CFR 101.4). Note the spec also declares lemon peel as an ingredient, which the front panel does not reflect.</span></div>
+      <div class="lg"><span class="pin p-bad">3</span><span class="tx"><b>Nutrition Facts absent.</b> The matched spec's 0.02 kcal/100 g figure is not usable — see section 03.</span></div>
+      <div class="lg"><span class="pin p-bad">4</span><span class="tx"><b>No US responsible party.</b></span></div>
+      <div class="lg"><span class="pin p-ok">5</span><span class="tx"><b>Lot / date coding field present.</b></span></div>
+      <div class="lg"><span class="pin p-bad">6</span><span class="tx"><b>No “Product of Ukraine” marking</b>; origin (Kenya) appears in the specification only.</span></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Compiled from the five files in the shared folder — finished-product specifications <span class="num">12391211</span> and <span class="num">12381106</span>, and artworks for English Breakfast 100 g, English Breakfast 50 g and Earl Grey 50 g. Portfolio figures are drawn from the Sherlock Secrets 2025 product catalogue. Panel copy was read from flattened JPGs; the print-ready vector files remain the controlling documents. Plate schematics are compliance diagrams, not reproductions of the artwork. Regulatory references are cited for discussion and are not a legal opinion.</p>
+  </footer>
+</div>
+
+</body>
+</html>
